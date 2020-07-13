@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:noticias/src/page/tabs1_pages.dart';
+
 import 'package:provider/provider.dart';
 
 class TabsPage extends StatelessWidget {
@@ -21,8 +23,8 @@ class _Botton_navigation_bar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final navegacionModel = Provider.of<_NavegacionModel>(
-        context); // esto es como si fuera un singleton
+    final navegacionModel = Provider.of<_NavegacionModel>(context);
+    // esto es como si fuera un singleton
     return BottomNavigationBar(
         currentIndex: navegacionModel.paginaActual,
         onTap: (i) => navegacionModel.paginaActual = i,
@@ -50,9 +52,7 @@ class _Paginas extends StatelessWidget {
       physics:
           NeverScrollableScrollPhysics(), // para bloquear el desplazamiento
       children: <Widget>[
-        Container(
-          color: Colors.red,
-        ),
+        Tab1Page(),
         Container(
           color: Colors.green,
         )
