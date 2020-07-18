@@ -12,11 +12,11 @@ class NewsServices with ChangeNotifier {
     this.getTopHeadlines();
   }
   getTopHeadlines() async {
-    final url = '$_URL_NEWS/everything?q=bitcoin&apiKey=$_API_KEY';
+    final url = '$_URL_NEWS/everything?q=bitcoin&apiKey=$_API_KEY'; //paso 1 traer url
     final resp = await http.get(url);
 
     final newsResponse = newsResponseFromJson(resp.body);
-    this.headlines.addAll(newsResponse.articles);
-    notifyListeners();
+    this.headlines.addAll(newsResponse.articles);// agregar informacion al headline
+    notifyListeners();// notificar a los listener
   }
 }
