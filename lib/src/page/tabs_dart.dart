@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:noticias/src/page/tab2_page.dart';
 import 'package:noticias/src/page/tabs1_pages.dart';
 
 import 'package:provider/provider.dart';
@@ -53,9 +54,7 @@ class _Paginas extends StatelessWidget {
           NeverScrollableScrollPhysics(), // para bloquear el desplazamiento
       children: <Widget>[
         Tab1Page(),
-        Container(
-          color: Colors.green,
-        )
+        Tab2Page(),
       ],
     );
   }
